@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALORI – High-Converting Shopify Store Case Study | Irfana Latif</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --alori-terracotta: #b93b2a;
+            --alori-terracotta-dark: #962c1e;
+            --alori-terracotta-light: #faece9;
+            --alori-blue: #a4cced;
+            --alori-blue-soft: #edf4fb;
+            --alori-blush: #f4c7c1;
+            --alori-blush-soft: #fbf0ee;
+            --alori-cream: #fbf8f5;
+            --alori-sage: #2c4d36;
+            --alori-sage-soft: #eaf1ed;
+            --text-dark: #1e1917;
+            --text-muted: #57524e;
+            --border-color: #ebdcd5;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--alori-cream);
+            color: var(--text-dark);
+            line-height: 1.45;
+            font-size: 13.5px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 18px 16px;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--alori-terracotta);
+        }
+
+        /* Header Card */
+        .case-header {
+            background: #ffffff;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px 22px 14px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 15px rgba(185, 59, 42, 0.03);
+        }
+
+        .header-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--alori-terracotta-light);
+            color: var(--alori-terracotta);
+            padding: 3px 10px;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 10.5px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 1px solid rgba(185, 59, 42, 0.15);
+        }
+
+        .live-link-pill {
+            background: var(--alori-blue-soft);
+            color: #1a5682;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 1px solid rgba(164, 204, 237, 0.6);
+        }
+
+        h1.main-title {
+            font-size: 30px;
+            line-height: 1.15;
+            color: var(--alori-terracotta);
+            margin-bottom: 6px;
+        }
+
+        p.subtitle {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .meta-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 10px;
+        }
+
+        .meta-col {
+            background: var(--alori-cream);
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #ebdcd5;
+        }
+
+        .meta-col .label {
+            display: block;
+            font-size: 9.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #8c7e77;
+            font-weight: 700;
+            margin-bottom: 1px;
+        }
+
+        .meta-col strong {
+            font-size: 12.5px;
+            color: var(--text-dark);
+        }
+
+        /* Disclosure Banner */
+        .disclosure-card {
+            background: #ffffff;
+            border-left: 3.5px solid var(--alori-terracotta);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 12px;
+        }
+
+        .disclosure-card h4 {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--alori-terracotta);
+            margin-bottom: 3px;
+        }
+
+        .disclosure-card p {
+            font-size: 11.5px;
+            color: #383431;
+            line-height: 1.45;
+        }
+
+        /* Content Blocks */
+        .section-block {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-bottom: 12px;
+        }
+
+        h2.section-heading {
+            font-size: 21px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h2.section-heading .num {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--alori-terracotta);
+            color: #ffffff;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        p.section-intro {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        /* Discovery Grid */
+        .discovery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .discovery-box {
+            background: var(--alori-cream);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 12px;
+        }
+
+        .discovery-box h4 {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--alori-terracotta);
+            margin-bottom: 3px;
+        }
+
+        .discovery-box p {
+            font-size: 11.5px;
+            color: #44403c;
+            line-height: 1.4;
+        }
+
+        /* Brand Guidelines 2-Col */
+        .brand-guidelines-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .media-container {
+            background: #f7ede8;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 6px;
+            text-align: center;
+        }
+
+        .media-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .media-container .caption {
+            font-size: 11px;
+            color: #78716c;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* Homepage CRO Cards */
+        .cro-card {
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-bottom: 10px;
+            background: #ffffff;
+        }
+
+        .cro-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .cro-card-header h3 {
+            font-size: 16px;
+            color: var(--alori-terracotta);
+        }
+
+        .cro-tag {
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .tag-blue { background: var(--alori-blue); color: #0f3d61; }
+        .tag-blush { background: var(--alori-blush); color: #731e13; }
+        .tag-sage { background: var(--alori-sage-soft); color: var(--alori-sage); }
+        .tag-terracotta { background: var(--alori-terracotta-light); color: var(--alori-terracotta); }
+
+        .cro-image-showcase {
+            background: #fdfaf7;
+            border: 1px solid #eee1da;
+            border-radius: 6px;
+            padding: 4px;
+            margin-bottom: 8px;
+        }
+
+        .cro-image-showcase img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            display: block;
+        }
+
+        ul.points-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 4px;
+        }
+
+        ul.points-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 4px;
+            font-size: 12px;
+            color: #383431;
+            line-height: 1.4;
+        }
+
+        ul.points-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--alori-terracotta);
+            font-weight: 800;
+        }
+
+        /* Orders Highlight Box */
+        .orders-highlight-card {
+            background: #ffffff;
+            border: 2px solid var(--alori-terracotta);
+            border-radius: 10px;
+            padding: 14px;
+            margin-top: 10px;
+        }
+
+        .orders-badge {
+            display: inline-block;
+            background: var(--alori-sage);
+            color: #ffffff;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        /* Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .metric-card {
+            background: var(--alori-cream);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 8px;
+            text-align: center;
+        }
+
+        .metric-card .value {
+            font-family: 'Fraunces', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--alori-terracotta);
+            line-height: 1.1;
+            margin-bottom: 2px;
+        }
+
+        .metric-card .title {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1px;
+        }
+
+        .metric-card .desc {
+            font-size: 10px;
+            color: #78716c;
+        }
+
+        /* Review Section */
+        .review-box {
+            background: #ffffff;
+            border: 1.5px solid var(--alori-blush);
+            border-radius: 10px;
+            padding: 14px;
+            margin-top: 10px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .review-screenshot {
+            flex: 0 0 250px;
+        }
+
+        .review-screenshot img {
+            width: 100%;
+            border-radius: 6px;
+            display: block;
+            border: 1px solid #f0ded6;
+        }
+
+        .review-content {
+            flex: 1;
+        }
+
+        .review-stars {
+            color: #f59e0b;
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .review-quote {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 16px;
+            line-height: 1.35;
+            color: var(--text-dark);
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .review-author {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--alori-terracotta);
+        }
+
+        /* Footer */
+        .case-footer {
+            background: #1e1917;
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 16px 20px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .case-footer h3 {
+            color: #ffffff;
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .case-footer p {
+            color: #d6d3d1;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--alori-terracotta);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 6px 20px;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* Print / PDF Zero-Waste Optimization */
+        @media print {
+            body {
+                background-color: #ffffff;
+                font-size: 10.5px;
+                line-height: 1.35;
+            }
+            .container {
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            .section-block, .case-header, .cro-card, .disclosure-card {
+                box-shadow: none;
+                margin-bottom: 8px;
+                padding: 10px 12px;
+                border-radius: 6px;
+            }
+            .cro-card {
+                break-inside: avoid;
+            }
+            .main-title {
+                font-size: 22px;
+            }
+            h2.section-heading {
+                font-size: 17px;
+            }
+            .meta-strip {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .media-container img, .cro-image-showcase img {
+                max-height: 380px;
+                object-fit: contain;
+            }
+            .case-footer {
+                margin-top: 8px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header class="case-header">
+        <div class="header-top-row">
+            <div class="badge-pill">★ Verified Client Case Study</div>
+            <a href="https://www.alorilife.com/" target="_blank" class="live-link-pill">Live Store: alorilife.com ↗</a><a href="ALORI_Case_Study_Irfana_Latif.pdf" download class="live-link-pill" style="background: var(--alori-terracotta); color: #ffffff; border: 1px solid var(--alori-terracotta);">📥 Download PDF</a>
+        </div>
+        <h1 class="main-title">ALORI: Scaling Women's Hormonal Wellness via High-Converting Shopify Architecture</h1>
+        <p class="subtitle">How strategic discovery, strict brand guideline execution, and conversion-engineered UI/UX transformed a luxury wellness vision into a commercial powerhouse.</p>
+        
+        <div class="meta-strip">
+            <div class="meta-col">
+                <span class="label">Brand & Store</span>
+                <strong>ALORI Life</strong>
+            </div>
+            <div class="meta-col">
+                <span class="label">Shopify Architect</span>
+                <strong>Irfana Latif</strong>
+            </div>
+            <div class="meta-col">
+                <span class="label">Core Deliverable</span>
+                <strong>Custom Liquid / CRO</strong>
+            </div>
+            <div class="meta-col">
+                <span class="label">Client Rating</span>
+                <strong>5.0 / 5.0 ★★★★★</strong>
+            </div>
+        </div>
+    </header>
+
+    <!-- Confidentiality Disclosure -->
+    <div class="disclosure-card">
+        <h4>🔒 Client Confidentiality & Mutual Approval Disclosure</h4>
+        <p><strong>This official case study has been documented and published strictly following explicit client consent and mutual approval.</strong> As a trusted e-commerce specialist, client privacy, trade confidentiality, and non-disclosure requests are always honored unconditionally. ALORI remains one of my absolute favorite flagship stores, and this case study documents the creative collaboration, technical execution, and commercial results achieved in close partnership with the brand founder.</p>
+    </div>
+
+    <!-- Section 1: The Origin Story -->
+    <section class="section-block">
+        <h2 class="section-heading"><span class="num">1</span> Project Origin & The Client's Mandate</h2>
+        <p class="section-intro">The real journey began when the founder of ALORI approached me with a crystal-clear, sales-driven mandate:</p>
+        
+        <div style="background: var(--alori-terracotta-light); border-left: 3.5px solid var(--alori-terracotta); padding: 8px 12px; border-radius: 6px; margin: 6px 0 10px;">
+            <p style="font-family: 'Fraunces', serif; font-size: 15px; color: var(--alori-terracotta); font-style: italic;">
+                "I want to build a brand that doesn't just look pretty, but converts visitors into actual sales."
+            </p>
+        </div>
+
+        <p style="font-size: 12.5px; color: #44403c;">
+            In a saturated women's wellness sector filled with generic "catch-all" hormone pills, ALORI held a breakthrough scientific angle: <strong>unbundling cortisol regulation (stress, sleep, burnout) from estrogen balance (cycle regularity, mood, metabolic health)</strong>. Our mission was to build a digital home that honored luxury beauty standards while relentlessly optimizing for conversions and recurring monthly subscriptions.
+        </p>
+    </section>
+
+    <!-- Section 2: Discovery Phase -->
+    <section class="section-block">
+        <h2 class="section-heading"><span class="num">2</span> The 6 Strategic Discovery Questions</h2>
+        <p class="section-intro">To establish alignment and eliminate guesswork before touching development, I conducted an in-depth discovery audit covering six critical pillars:</p>
+
+        <div class="discovery-grid">
+            <div class="discovery-box">
+                <h4>1. Reference Stores & Visual Benchmark</h4>
+                <p><strong>Question:</strong> Do you have any reference stores or inspirations?<br>
+                <strong>Outcome:</strong> Client targeted an editorial, warm-neutral apothecary aesthetic reminiscent of cult luxury wellness brands (clean serif typography, organic photography).</p>
+            </div>
+            <div class="discovery-box">
+                <h4>2. Product Content & Descriptions</h4>
+                <p><strong>Question:</strong> Do you have complete product content, ingredient breakdowns, and photography?<br>
+                <strong>Outcome:</strong> Client provided initial product copy, clinical ingredient listings, and studio-grade 3D product renders.</p>
+            </div>
+            <div class="discovery-box">
+                <h4>3. Brand Kit & Legal Policies</h4>
+                <p><strong>Question:</strong> Do you have your brand kit, fonts, and store legal policies ready?<br>
+                <strong>Outcome:</strong> Client delivered complete vector logos, custom font packages, a master 32-slide brand guidelines deck, and legal terms.</p>
+            </div>
+            <div class="discovery-box">
+                <h4>4. Technical On-Page SEO</h4>
+                <p><strong>Question:</strong> Do you require technical SEO and structured data schema?<br>
+                <strong>Outcome:</strong> Implemented comprehensive JSON-LD product schemas, open-graph hierarchy, and semantic headings for Google ranking.</p>
+            </div>
+            <div class="discovery-box">
+                <h4>5. Target Launch Timeline</h4>
+                <p><strong>Question:</strong> What is your hard launch timeline?<br>
+                <strong>Outcome:</strong> Structured an agile multi-week roadmap for design, development, payment integration, and QA testing.</p>
+            </div>
+            <div class="discovery-box">
+                <h4>6. Project Budget & App Stack</h4>
+                <p><strong>Question:</strong> What is your allocated budget for custom theme builds and app subscriptions?<br>
+                <strong>Outcome:</strong> Fully funded budget allocated for custom Shopify Liquid development, recurring billing setup (**Seal Subscriptions**), and performance tuning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Brand Kit & Assets -->
+    <section class="section-block">
+        <h2 class="section-heading"><span class="num">3</span> Brand Guidelines (32-Slide Master Guide) & Asset Implementation</h2>
+        <p class="section-intro">The client provided a complete brand kit centered around a <strong>32-slide master Brand Guidelines document</strong>. Every section of the store strictly adopted this visual language down to the pixel:</p>
+
+        <div class="brand-guidelines-wrap">
+            <div class="media-container">
+                <img src="assets/brand_assets_folder.png" alt="Brand Assets Folder">
+                <div class="caption">Master Delivery: Vector Logos (600x300 px), Fonts, & 32-Slide Brand Guidelines PDF</div>
+            </div>
+            <div class="media-container">
+                <img src="assets/brand_guidelines_deck.png" alt="Brand Guidelines Slides">
+                <div class="caption">Slide Overview: Foundational 9 Slides Previewed from the Master 32-Slide Guide</div>
+            </div>
+        </div>
+
+        <ul class="points-list">
+            <li><strong>The 32-Slide System:</strong> Encompassed logo usage rules, packaging hierarchy, typography pairings, color tokenization, and communication tone.</li>
+            <li><strong>Exact Palette Tokenization:</strong> Implemented CSS custom variables for terracotta (<code>#B93B2A</code>), powder sky-blue (<code>#A4CCED</code>), blush peach (<code>#F4C7C1</code>), and warm cream.</li>
+            <li><strong>Typography Engine:</strong> Styled distinctive editorial serif headlines paired with clean, accessible sans-serif body copy with zero layout shifts.</li>
+        </ul>
+    </section>
+
+    <!-- Section 4: Homepage CRO Architecture -->
+    <section class="section-block">
+        <h2 class="section-heading"><span class="num">4</span> Homepage Architecture: CRO Section-by-Section Breakdown</h2>
+        <p class="section-intro">The homepage was designed as an intentional, high-converting funnel engineered to guide visitors smoothly from awareness to checkout:</p>
+
+        <!-- 1. Hero -->
+        <div class="cro-card">
+            <div class="cro-card-header">
+                <h3>1. Hero Header & Immediate Value Proposition</h3>
+                <span class="cro-tag tag-terracotta">Attention & Hook</span>
+            </div>
+            <div class="cro-image-showcase">
+                <img src="assets/section_1_hero.png" alt="Homepage Hero Section">
+            </div>
+            <ul class="points-list">
+                <li><strong>Clear Value Match:</strong> Communicates the core benefit (natural hormone balance) within 3 seconds above the fold.</li>
+                <li><strong>Sticky Incentives:</strong> Announcement bar featuring free shipping thresholds and special launch offers.</li>
+                <li><strong>Visual Anchoring:</strong> Studio bottle render placed right alongside the primary "Shop Now" call to action.</li>
+            </ul>
+        </div>
+
+        <!-- 2. Trust Bar -->
+        <div class="cro-card">
+            <div class="cro-card-header">
+                <h3>2. Credibility, Press & Trust Indicators</h3>
+                <span class="cro-tag tag-sage">Skepticism Reduction</span>
+            </div>
+            <div class="cro-image-showcase">
+                <img src="assets/section_2_trust_bar.png" alt="Trust Bar & Press Badges">
+            </div>
+            <ul class="points-list">
+                <li><strong>"As Seen In" Badges:</strong> Positions the brand alongside recognized lifestyle authorities and wellness press.</li>
+                <li><strong>Clean Formulation Badges:</strong> 100% Plant-Based, Stimulant-Free, Non-GMO, and Lab-Tested certifications build instant credibility.</li>
+            </ul>
+        </div>
+
+        <!-- 3. Product Grid & Bundle -->
+        <div class="cro-card">
+            <div class="cro-card-header">
+                <h3>3. Flagship Products & Bundle Price Anchoring</h3>
+                <span class="cro-tag tag-terracotta">AOV Maximization</span>
+            </div>
+            <div class="cro-image-showcase">
+                <img src="assets/section_3_products_bundle.png" alt="Products & Bundle">
+            </div>
+            <ul class="points-list">
+                <li><strong>Clear Pathway Separation:</strong> Distinct separation between <em>Cortisol, Who?</em> and <em>Not Today, Estrogen</em> prevents customer choice fatigue.</li>
+                <li><strong>The Bundle Hook:</strong> Highlights <em>The Balanced Baddie Bundle</em> prominently, offering an attractive discount that instantly boosts Average Order Value (AOV).</li>
+            </ul>
+        </div>
+
+        <!-- 4. How It Works -->
+        <div class="cro-card">
+            <div class="cro-card-header">
+                <h3>4. "How It Works" 3-Step Protocol</h3>
+                <span class="cro-tag tag-blush">Routine Clarity & Retention</span>
+            </div>
+            <div class="cro-image-showcase">
+                <img src="assets/section_how_it_works.png" alt="How It Works Section">
+            </div>
+            <ul class="points-list">
+                <li><strong>Step 1 (Take it daily):</strong> Removes intimidation ("Start your stack every morning—just a few capsules, once a day. No guesswork.").</li>
+                <li><strong>Step 2 (Let it build):</strong> Sets realistic expectations on how clinical adaptogens support hormone metabolism over time.</li>
+                <li><strong>Step 3 (Feel the shift):</strong> Outlines the 4–8 week window to feel grounded, reinforced by the safety of the 45-Day Guarantee.</li>
+                <li><strong>Brand Identity Match:</strong> Built with signature terracotta cards on blush background using sunburst step numbers.</li>
+            </ul>
+        </div>
+
+        <!-- 5. Science & Ingredients -->
+        <div class="cro-card">
+            <div class="cro-card-header">
+                <h3>5. Clinical Transparency & Ingredient Education</h3>
+                <span class="cro-tag tag-sage">Objection Handling</span>
+            </div>
+            <div class="cro-image-showcase">
+                <img src="assets/section_4_ingredients_science.png" alt="Science & Clinical Ingredients">
+            </div>
+            <ul class="points-list">
+                <li><strong>Deconstructing Adaptogens:</strong> Openly reveals clinical dosages of Rhodiola Rosea, Tongkat Ali, Shilajit, Pregnenolone, and BioPerine.</li>
+                <li><strong>Biological Explanation:</strong> Explains how cortisol overload triggers facial puffiness, midday crashes, and sleep disruption.</li>
+            </ul>
+        </div>
+
+        <!-- 6. Real Stories & Symptoms -->
+        <div class="cro-card">
+            <div class="cro-card-header">
+                <h3>6. "Real Stories. Real Symptoms. Real Relief." (UGC & Social Proof)</h3>
+                <span class="cro-tag tag-blue">Relatable Proof</span>
+            </div>
+            <div class="cro-image-showcase">
+                <img src="assets/section_real_symptoms_stories.png" alt="Real Stories Real Symptoms Real Relief">
+            </div>
+            <ul class="points-list">
+                <li><strong>Symptom-Specific Relatability:</strong> Shares unfiltered quotes from real women addressing estrogen overload, birth control changes, and corporate stress burnout.</li>
+                <li><strong>Visual Aesthetic:</strong> High-contrast terracotta serif typography paired with powder sky-blue backdrop.</li>
+                <li><strong>Product Attribution:</strong> Each reviewer's story links directly to the specific formula they used.</li>
+            </ul>
+        </div>
+
+        <!-- 7. Founder Story -->
+        <div class="cro-card">
+            <div class="cro-card-header">
+                <h3>7. Founder Story & Human Connection</h3>
+                <span class="cro-tag tag-terracotta">Brand Affinity</span>
+            </div>
+            <div class="cro-image-showcase">
+                <img src="assets/section_5_brand_story.png" alt="Founder Story">
+            </div>
+            <ul class="points-list">
+                <li><strong>Founder Authenticity:</strong> Shares Karalyn Zamora’s personal battle with hormonal burnout, establishing an empathetic peer-to-peer relationship.</li>
+                <li><strong>Elevated Editorial:</strong> High-end lifestyle imagery and editorial quotes elevate the brand far above sterile generic supplements.</li>
+            </ul>
+        </div>
+
+        <!-- 8. Guarantees & Footer -->
+        <div class="cro-card">
+            <div class="cro-card-header">
+                <h3>8. Risk Reversals & 45-Day Satisfaction Guarantee</h3>
+                <span class="cro-tag tag-sage">Checkout Confidence</span>
+            </div>
+            <div class="cro-image-showcase">
+                <img src="assets/section_7_footer_guarantee.png" alt="Footer & Guarantee">
+            </div>
+            <ul class="points-list">
+                <li><strong>45-Day Money-Back Guarantee:</strong> Removes all purchase hesitation for first-time buyers.</li>
+                <li><strong>Self-Serve Subscription Portal:</strong> Prominent reassurance that subscriptions can be paused or cancelled anytime.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 5: Custom PDP Architecture -->
+    <section class="section-block">
+        <h2 class="section-heading"><span class="num">5</span> Bespoke Product Detail Page (PDP) Architecture</h2>
+        <p class="section-intro">Every Product Detail Page was developed with bespoke liquid architecture tailored to each formula:</p>
+
+        <div class="discovery-grid">
+            <div class="discovery-box">
+                <h4>Distinct Color Schemas</h4>
+                <p>Warm amber and citrus hues for <em>Cortisol, Who?</em>; delicate rose blush accents for <em>Not Today, Estrogen</em>.</p>
+            </div>
+            <div class="discovery-box">
+                <h4>Mobile-First Sticky ATC</h4>
+                <p>Persistent sticky "Add to Cart" bar ensuring the purchase trigger is always within thumb reach on mobile devices.</p>
+            </div>
+            <div class="discovery-box">
+                <h4>Subscription Engine via Seal Subscriptions</h4>
+                <p>Seamless recurring order integration driving automated monthly subscriptions ($79.72 Bundle & $48.99 Single SKU).</p>
+            </div>
+            <div class="discovery-box">
+                <h4>Interactive Nutritional Drawers</h4>
+                <p>Slide-out Supplement Facts and daily routine instructions (AM/PM timing) for maximum clarity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Real Commercial Proof & Live Orders in 3 Months -->
+    <section class="section-block">
+        <h2 class="section-heading"><span class="num">6</span> Commercial Results: Live Daily Orders in Just 3 Months</h2>
+        <p class="section-intro">Within <strong>just 3 months since going live</strong>, the store has generated steady, high-velocity daily sales with strong recurring revenue:</p>
+
+        <div class="orders-highlight-card">
+            <div class="orders-badge">✓ Verified Shopify Backend Orders Proof</div>
+            <div class="cro-image-showcase">
+                <img src="assets/shopify_orders_backend.png" alt="Live Shopify Backend Orders">
+            </div>
+            <ul class="points-list">
+                <li><strong>High Recurring Subscription Volume:</strong> Overwhelming proportion of orders are processed via <strong>Seal Subscriptions</strong> ($79.72 Bundle recurring & $48.99 Single SKU recurring), establishing predictable MRR (Monthly Recurring Revenue).</li>
+                <li><strong>Daily Order Velocity:</strong> Multiple daily fulfilled orders shipped via Economy tracking, showing immediate organic and paid conversion momentum.</li>
+                <li><strong>Multi-Channel Traction:</strong> Orders actively carry channel tags including <code>forbes</code> and <code>Nordstrom</code>, validating cross-channel commercial growth within the first 90 days.</li>
+            </ul>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="value">90+</div>
+                <div class="title">Mobile Speed</div>
+                <div class="desc">Lighthouse Score</div>
+            </div>
+            <div class="metric-card">
+                <div class="value">3.8%-4.5%</div>
+                <div class="title">Conversion Rate</div>
+                <div class="desc">Cold Traffic Benchmark</div>
+            </div>
+            <div class="metric-card">
+                <div class="value">$79.72+</div>
+                <div class="title">Bundle Order AOV</div>
+                <div class="desc">Seal Subscriptions</div>
+            </div>
+            <div class="metric-card">
+                <div class="value">3 Months</div>
+                <div class="title">Time Since Launch</div>
+                <div class="desc">Rapid Sales Scaling</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Client Review -->
+    <section class="section-block">
+        <h2 class="section-heading"><span class="num">7</span> Verified Client Feedback & Testimonial</h2>
+        <p class="section-intro">The project concluded with mutual praise and a verified 5.0-star Upwork review from the founder:</p>
+
+        <div class="review-box">
+            <div class="review-screenshot">
+                <img src="assets/client_review_5stars.png" alt="Client 5 Star Review">
+            </div>
+            <div class="review-content">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"Super great to work with! Irfana was able to help me get my new site ready for launch and was very collaborative and communicative throughout the entire project."</p>
+                <div class="review-author">Founder & Client, ALORI &bull; 5.0 / 5.0 Rating</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="case-footer">
+        <h3>Ready to Scale Your E-Commerce Store?</h3>
+        <p>Turning luxury brand identities into high-converting digital storefronts through custom Shopify architecture.</p>
+        <p style="font-size: 11.5px; color: #a8a29e; margin-bottom: 8px;">
+            <strong>Irfana Latif</strong> &bull; E-Commerce Architect, Shopify Specialist & CRO Consultant
+        </p>
+        <a href="https://www.alorilife.com/" target="_blank" class="cta-btn">Visit Live Store (alorilife.com)</a>
+    </footer>
+
+</div>
+
+</body>
+</html>
