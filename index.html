@@ -29,6 +29,11 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+            -webkit-touch-callout: none !important;
         }
 
         body {
@@ -38,6 +43,12 @@
             line-height: 1.45;
             font-size: 13.5px;
             -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            -webkit-user-drag: none !important;
+            user-drag: none !important;
+            pointer-events: none !important;
         }
 
         .container {
@@ -96,6 +107,19 @@
             font-weight: 700;
             text-decoration: none;
             border: 1px solid rgba(164, 204, 237, 0.6);
+        }
+
+        .confidential-pill {
+            background: #2a1512;
+            color: #fca5a5;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            font-size: 10.5px;
+            font-weight: 700;
+            border: 1px solid rgba(185, 59, 42, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
         h1.main-title {
@@ -476,56 +500,118 @@
             font-size: 12px;
         }
 
-        /* Print / PDF Zero-Waste Optimization */
+        /* Full Screen Security Lockout Modal */
+        #security-lockout {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #0d0908;
+            color: #ffffff;
+            z-index: 2147483647;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 24px;
+            box-sizing: border-box;
+            backdrop-filter: blur(15px);
+        }
+
+        .lockout-card {
+            max-width: 600px;
+            background: #1a1110;
+            border: 2px solid #b93b2a;
+            border-radius: 16px;
+            padding: 36px 28px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+        }
+
+        .lockout-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .lockout-title {
+            font-family: 'Fraunces', serif;
+            font-size: 26px;
+            color: #f87171;
+            margin-bottom: 12px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .lockout-desc {
+            font-size: 13.5px;
+            color: #e5e5e5;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .lockout-box {
+            background: #2b1714;
+            border: 1px solid #4a2420;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-family: monospace;
+            font-size: 12px;
+            color: #fca5a5;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .lockout-footer {
+            font-size: 11.5px;
+            color: #a3a3a3;
+        }
+
+        /* Anti-Print Optimization */
         @media print {
-            body {
-                background-color: #ffffff;
-                font-size: 10.5px;
-                line-height: 1.35;
-            }
-            .container {
-                max-width: 100%;
-                padding: 0;
-                margin: 0;
-            }
-            .section-block, .case-header, .cro-card, .disclosure-card {
-                box-shadow: none;
-                margin-bottom: 8px;
-                padding: 10px 12px;
-                border-radius: 6px;
-            }
-            .cro-card {
-                break-inside: avoid;
-            }
-            .main-title {
-                font-size: 22px;
-            }
-            h2.section-heading {
-                font-size: 17px;
-            }
-            .meta-strip {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            .media-container img, .cro-image-showcase img {
-                max-height: 380px;
-                object-fit: contain;
-            }
-            .case-footer {
-                margin-top: 8px;
-                padding: 12px;
+            html, body, #main-container, .container {
+                display: none !important;
+                visibility: hidden !important;
+                height: 0 !important;
+                overflow: hidden !important;
+                opacity: 0 !important;
             }
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
 
-<div class="container">
+<!-- Security Lockout Screen (Shown on Screenshot, Copy, or Print Attempt) -->
+<div id="security-lockout">
+    <div class="lockout-card">
+        <span class="lockout-icon">🛑</span>
+        <h2 class="lockout-title">Document Access Terminated</h2>
+        <p class="lockout-desc">
+            <strong>CONFIDENTIALITY VIOLATION DETECTED:</strong> Screen capture, screenshotting, printing, or attempting to duplicate this client case study is strictly prohibited under our active Client Non-Disclosure Agreement (NDA).
+            Your session has been terminated and access to this proprietary report has been permanently revoked.
+        </p>
+        <div class="lockout-box">
+            <div><strong>Security Status:</strong> LOCKED (Violating Action Intercepted)</div>
+            <div><strong>Trigger Reason:</strong> <span id="lockout-reason">Screen Capture / Shortcut Detected</span></div>
+            <div><strong>Timestamp:</strong> <span id="lockout-timestamp">--</span></div>
+            <div><strong>Access Policy:</strong> Zero-Trust Client NDA Protection</div>
+        </div>
+        <p class="lockout-footer">
+            To request authorized access or verify client permissions, contact the authorized architect directly.
+        </p>
+    </div>
+</div>
+
+<div class="container" id="main-container">
 
     <!-- Header -->
     <header class="case-header">
         <div class="header-top-row">
             <div class="badge-pill">★ Verified Client Case Study</div>
-            <a href="https://www.alorilife.com/" target="_blank" class="live-link-pill">Live Store: alorilife.com ↗</a><a href="ALORI_Case_Study_Irfana_Latif.pdf" download class="live-link-pill" style="background: var(--alori-terracotta); color: #ffffff; border: 1px solid var(--alori-terracotta);">📥 Download PDF</a>
+            <div style="display: flex; gap: 6px; align-items: center;">
+                <span class="confidential-pill">🔒 Confidential Client View</span>
+                <a href="https://www.alorilife.com/" target="_blank" class="live-link-pill">Live Store: alorilife.com ↗</a>
+            </div>
         </div>
         <h1 class="main-title">ALORI: Scaling Women's Hormonal Wellness via High-Converting Shopify Architecture</h1>
         <p class="subtitle">How strategic discovery, strict brand guideline execution, and conversion-engineered UI/UX transformed a luxury wellness vision into a commercial powerhouse.</p>
@@ -858,6 +944,125 @@
     </footer>
 
 </div>
+
+<script>
+(function() {
+    'use strict';
+
+    // 1. Check if session was already locked out
+    if (sessionStorage.getItem('alori_security_lockout') === 'true') {
+        applyLockout('PREVIOUS_CONFIDENTIALITY_BREACH');
+    }
+
+    function applyLockout(reason) {
+        sessionStorage.setItem('alori_security_lockout', 'true');
+
+        // Clear user clipboard
+        try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText('CONFIDENTIAL MATERIAL - REPRODUCTION PROHIBITED');
+            }
+        } catch(e) {}
+
+        // Completely hide and purge the main document
+        var main = document.getElementById('main-container');
+        if (main) {
+            main.style.display = 'none';
+            main.remove(); // Remove from DOM entirely
+        }
+
+        // Show Lockout Screen
+        var lockout = document.getElementById('security-lockout');
+        if (lockout) {
+            lockout.style.display = 'flex';
+            var reasonEl = document.getElementById('lockout-reason');
+            if (reasonEl) reasonEl.innerText = reason;
+            var timeEl = document.getElementById('lockout-timestamp');
+            if (timeEl) timeEl.innerText = new Date().toUTCString();
+        }
+
+        document.body.style.overflow = 'hidden';
+        document.body.style.background = '#0d0908';
+    }
+
+    // 2. Intercept PrintScreen and Keyboard Shortcuts
+    window.addEventListener('keydown', function(e) {
+        // PrintScreen Key
+        if (e.key === 'PrintScreen' || e.keyCode === 44) {
+            e.preventDefault();
+            applyLockout('SCREENSHOT_KEY_DETECTED (PrintScreen)');
+            return false;
+        }
+
+        // Ctrl+P / Cmd+P (Print / PDF save)
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'P' || e.keyCode === 80)) {
+            e.preventDefault();
+            applyLockout('PRINT_OR_PDF_EXPORT_ATTEMPT (Ctrl+P)');
+            return false;
+        }
+
+        // Ctrl+S / Cmd+S (Save Page)
+        if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S' || e.keyCode === 83)) {
+            e.preventDefault();
+            applyLockout('SAVE_PAGE_ATTEMPT (Ctrl+S)');
+            return false;
+        }
+
+        // Ctrl+Shift+S (Browser Screenshot Tools / Snipping)
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 's' || e.key === 'S' || e.keyCode === 83)) {
+            e.preventDefault();
+            applyLockout('SCREENSHOT_TOOL_SHORTCUT (Ctrl+Shift+S)');
+            return false;
+        }
+
+        // DevTools shortcuts (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+        if (e.keyCode === 123 || 
+            ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.key === 'j' || e.key === 'J')) ||
+            ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U'))) {
+            e.preventDefault();
+            applyLockout('INSPECTION_ATTEMPT (DevTools / Source View)');
+            return false;
+        }
+    }, true);
+
+    // Backup keyup listener for PrintScreen
+    window.addEventListener('keyup', function(e) {
+        if (e.key === 'PrintScreen' || e.keyCode === 44) {
+            applyLockout('SCREENSHOT_CAPTURE_DETECTED (PrintScreen)');
+        }
+    });
+
+    // 3. Intercept Print Events
+    window.addEventListener('beforeprint', function() {
+        applyLockout('PRINT_EVENT_TRIGGERED');
+    });
+
+    // 4. Intercept Copy / Cut
+    document.addEventListener('copy', function(e) {
+        e.preventDefault();
+        applyLockout('UNAUTHORIZED_COPY_ATTEMPT');
+        return false;
+    });
+
+    document.addEventListener('cut', function(e) {
+        e.preventDefault();
+        applyLockout('UNAUTHORIZED_CUT_ATTEMPT');
+        return false;
+    });
+
+    document.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+        return false;
+    });
+
+    // 5. Intercept Right Click
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+
+})();
+</script>
 
 </body>
 </html>
